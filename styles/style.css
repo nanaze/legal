@@ -1,0 +1,13 @@
+html,body {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 13.8px;
+    padding: 0;
+    margin: 0;
+}
+
+.centered {
+    max-width: 1200px;
+    padding: 0 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
