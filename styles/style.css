@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 html,body {
-    font-family: Verdana, Arial, sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
+
     font-size: 13.8px;
     padding: 0;
     margin: 0;
@@ -31,16 +32,15 @@ header a {
 
 
 .header {
-    padding: 1em 0;
+    padding: 0.3em 0;
     background-color: #041E42;
+    font-size: 220%;
 }
 
 .menu {
     padding: 0.4em 0;
-    font-family: "Source Sans Pro", sans-serif;
     background-color: #033250;
     color: #ddd;
-    font-size: 120%;
     font-weight: 560;
 
 }
@@ -48,6 +48,5 @@ header a {
 .headertext {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: bold;
-    font-size: 220%;
     color: #fff;
 }
