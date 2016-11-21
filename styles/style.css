@@ -14,6 +14,22 @@ html,body {
     margin-right: auto;
 }
 
+header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu ul {
+    padding: 0;    
+    margin: 0;
+}
+
+.menu li {
+    display: inline;
+    padding-right: 1.4em;
+}
+
+
 .header {
     padding: 1em 0;
     background-color: #041E42;
@@ -24,8 +40,9 @@ html,body {
     font-family: "Source Sans Pro", sans-serif;
     background-color: #033250;
     color: #ddd;
-    font-size: 140%;
+    font-size: 120%;
     font-weight: 560;
+
 }
 
 .headertext {
