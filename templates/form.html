@@ -1,0 +1,17 @@
+{% extends "templates/base.html" %}
+
+{% block content %}
+<form method="POST" action="/form">
+  <ul>
+    <li>
+      Your Email: <input type=text" name="email" />
+    </li>
+    <li>
+      Description:<textarea name="description" rows="4" cols="50"></textarea>
+    </li>
+    <li>
+      <input type="submit" />
+    </li>
+	</ul>
+</form>
+{% endblock %}
