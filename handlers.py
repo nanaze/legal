@@ -2,6 +2,7 @@ import os
 import jinja2
 import config
 import webapp2
+import logging
 
 from google.appengine.api import mail
 
