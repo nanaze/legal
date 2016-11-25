@@ -1,5 +1,6 @@
 import os
 import jinja2
+import config
 import webapp2
 
 from google.appengine.api import mail
@@ -18,6 +19,8 @@ Description: %s
 class MainPage(webapp2.RequestHandler):
   def get(self):
 
+    config.ReadConfig('dispatch.email')
+    
     self.response.headers['Content-Type'] = 'text/html'
 
     template = JINJA_ENVIRONMENT.get_template('templates/index.html')
