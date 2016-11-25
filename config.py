@@ -1,16 +1,25 @@
-from google.appengine.ext import blobstore
+import cloudstorage
 import os
 import logging 
+from google.appengine.api import app_identity
 
-def _GetBlobstorePath(filename):
-  return os.path.join('appengine_config', filename)
+def _GetBucketPath():
+  return os.path.join('/', app_identity.get_default_gcs_bucket_name())
+
+def _GetConfigPath():
+  return os.path.join(_GetBucketPath(), 'appengine_config')
+
+def _GetValuePath(filename):
+  return os.path.join(_GetConfigPath(), filename)
 
 def ReadConfig(filename):
-  path = _GetBlobstorePath(filename)
+  path = _GetValuePath(filename)
+
   try:
-    with blobstore.BlobReader(path) as reader:
-      return reader.read()
-  except blobstore.BlobNotFoundError:
-    logging.info('Could not find config value for key: "%s"', filename)
-    return None
+    with cloudstorage.open(path) as f:
+      return f.read()
+  except cloudstorage.NotFoundError as e:
+    logging.warning('Could not open path %s. %s', path, e)
+
+  return None
 
