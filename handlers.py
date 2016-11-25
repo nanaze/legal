@@ -18,9 +18,6 @@ Description: %s
 
 class MainPage(webapp2.RequestHandler):
   def get(self):
-
-    config.ReadConfig('dispatch.email')
-    
     self.response.headers['Content-Type'] = 'text/html'
 
     template = JINJA_ENVIRONMENT.get_template('templates/index.html')
@@ -46,13 +43,20 @@ class Form(webapp2.RequestHandler):
   def post(self):
     email = self.request.get('email')
     description = self.request.get('description')
-    print('Form recieved')
-    print('Email: %s' % email)
-    print('Description: %s' % description)
+
+
+    dispatch_email = config.ReadConfig('dispatch.email')
+
+    logging.info('Sending email to %s', email)
+    
+    if not dispatch_email:
+      logging.info('Dispatch email config not found. Would have sent email here')
+      return None
+
     # TODO(claywoolam): Store an entry in the DB, or figure out a good logging strategy
-    print('Sending email to claytest41456@gmail.com')
+
     mail.send_mail(
-        sender="clay.woolam@gmail.com",
-        to="claytest41456@gmail.com",
+        sender=dispatch_email,
+        to=dispatch_email,
         subject="legal form email",
         body=EMAIL_BODY % (email, description))
