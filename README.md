@@ -1,5 +1,11 @@
 # legal
 
+# Downloading
+
+Clone the repository.
+
+This repository requires a Git submodule to work. Once you have the cloned repo, run `init_submodules.sh` in the root directory.
+
 # Running dev server
 
 Download and install the App Engine Python SDK
