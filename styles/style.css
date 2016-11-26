@@ -21,7 +21,7 @@ html,body {
 
 header a {
     text-decoration: none;
-    color: #000;
+    color: #292f36;
 }
 
 img#logo {
@@ -67,5 +67,8 @@ img#logo {
 .headertext {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: bold;
-    color: #fff;
+}
+
+article {
+  color: #292f36;
 }
