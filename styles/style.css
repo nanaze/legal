@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 html,body {
     font-family: "Source Sans Pro", sans-serif;
-
     font-size: 13.8px;
     padding: 0;
     margin: 0;
@@ -15,9 +15,29 @@ html,body {
     margin-right: auto;
 }
 
+header {
+    font-family: "Raleway", sans-serif;
+}
+
 header a {
     text-decoration: none;
-    color: #fff;
+    color: #000;
+}
+
+img#logo {
+  vertical-align: middle;
+}
+
+.headertext #light {
+  font-weight: 100;
+}
+
+.headertext #line {
+  font-weight: 700;
+}
+
+.menu a {
+  color: #fff;
 }
 
 .menu ul {
@@ -33,13 +53,12 @@ header a {
 
 .header {
     padding: 0.3em 0;
-    background-color: #041E42;
     font-size: 220%;
 }
 
 .menu {
     padding: 0.4em 0;
-    background-color: #033250;
+    background-color: #054a91;
     color: #ddd;
     font-weight: 560;
 
