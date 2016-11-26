@@ -1,10 +1,11 @@
 # legal
 
-# Downloading
+# Download and setup
 
-Clone the repository.
+1) Clone the repository.
 
-This repository requires a Git submodule to work. Once you have the cloned repo, run `init_submodules.sh` in the root directory.
+2) run `init_submodules.sh` in the root directory
+   This repository requires a Git submodule to work, and this script will set up the submodules.
 
 # Running dev server
 
