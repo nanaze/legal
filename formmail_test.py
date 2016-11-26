@@ -30,7 +30,10 @@ class FormMailTest(unittest.TestCase):
     self.assertMultiLineEqual(
       _EXPECTED_BODY, 
       formmail.GenerateEmail(MockRequest()))
-    
+
+  def test_RequestGenerateSubject(self):
+    self.assertEquals('email form contact: test@test.com',
+                      formmail.GenerateSubject(MockRequest()))
 
 if __name__ == '__main__':
     unittest.main()
