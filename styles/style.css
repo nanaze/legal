@@ -36,30 +36,35 @@ img#logo {
   font-weight: 700;
 }
 
-.menu a {
-  color: #fff;
+.menu {
+  position: absolute;
+  margin-left: 300px;
 }
 
 .menu ul {
-    padding: 0;    
-    margin: 0;
+ padding: 0;    
+ margin: 0;
 }
-
+ 
 .menu li {
-    display: inline;
-    padding-right: 1.4em;
+  display: inline;
+  padding-right: 1.4em;
 }
 
-
+.menucontainer {
+  height: 70px;
+  display: table-cell;
+  vertical-align: middle;
+}
 .header {
     padding: 0.3em 0;
-    font-size: 220%;
     border-bottom: 1px solid #e3e3e3;
 }
 
 .headertext {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: bold;
+    font-size: 220%;
 }
 
 article {
