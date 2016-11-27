@@ -1,7 +1,16 @@
 <ul>
 
 {% for item in navigation %}
-<li><a href="{{ item.href }}">{{ item.text }}</a></li>
+
+{% if request.path == item.href %}
+<li class=active>
+{% else %}
+<li>
+{% endif %}
+
+<a href="{{ item.href }}">{{ item.text }}</a>
+</li>
+
 {% endfor %}
 
 </ul>

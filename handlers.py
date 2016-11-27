@@ -32,7 +32,7 @@ class MainPage(webapp2.RequestHandler):
     self.response.headers['Content-Type'] = 'text/html'
 
     template = JINJA_ENVIRONMENT.get_template('templates/index.html')
-    content = template.render(_GetTemplateDict(request))
+    content = template.render(_GetTemplateDict(self.request))
     self.response.write(content)
 
 class Resources(webapp2.RequestHandler):
@@ -40,7 +40,7 @@ class Resources(webapp2.RequestHandler):
     self.response.headers['Content-Type'] = 'text/html'
 
     template = JINJA_ENVIRONMENT.get_template('templates/about.html')
-    content = template.render(_GetTemplateDict(request))
+    content = template.render(_GetTemplateDict(self.request))
     self.response.write(content)
 
 class Form(webapp2.RequestHandler):
@@ -52,7 +52,7 @@ class Contact(webapp2.RequestHandler):
     self.response.headers['Content-Type'] = 'text/html'
 
     template = JINJA_ENVIRONMENT.get_template('templates/form.html')
-    content = template.render(_GetTemplateDict(request))
+    content = template.render(_GetTemplateDict(self.request))
     self.response.write(content)
 
 

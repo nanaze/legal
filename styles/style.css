@@ -51,6 +51,14 @@ img#logo {
   padding-right: 1.4em;
 }
 
+.menu li a {
+  color: #aaa;
+}
+
+.menu li.active a {
+  color: #292f36;
+}
+
 .menucontainer {
   height: 70px;
   display: table-cell;
