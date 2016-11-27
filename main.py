@@ -8,6 +8,7 @@ logging.basicConfig(level=logging.INFO)
 
 app = webapp2.WSGIApplication([
   ('/', handlers.MainPage),
-  ('/about', handlers.About),
+  ('/resources', handlers.Resources),
+  ('/contact', handlers.Form),
   ('/form', handlers.Form),
 ], debug=True)

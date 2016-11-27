@@ -34,7 +34,7 @@ class MainPage(webapp2.RequestHandler):
     content = template.render(_GetTemplateDict())
     self.response.write(content)
 
-class About(webapp2.RequestHandler):
+class Resources(webapp2.RequestHandler):
   def get(self):
     self.response.headers['Content-Type'] = 'text/html'
 
