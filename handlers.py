@@ -21,9 +21,10 @@ def _GetNavigationEntries():
     NavigationEntry('/contact', 'Contact us.')
   ]
 
-def _GetTemplateDict():
+def _GetTemplateDict(request):
   return {
-    'navigation': _GetNavigationEntries()
+    'navigation': _GetNavigationEntries(),
+    'request': request
   }
 
 class MainPage(webapp2.RequestHandler):
@@ -31,7 +32,7 @@ class MainPage(webapp2.RequestHandler):
     self.response.headers['Content-Type'] = 'text/html'
 
     template = JINJA_ENVIRONMENT.get_template('templates/index.html')
-    content = template.render(_GetTemplateDict())
+    content = template.render(_GetTemplateDict(request))
     self.response.write(content)
 
 class Resources(webapp2.RequestHandler):
@@ -39,7 +40,7 @@ class Resources(webapp2.RequestHandler):
     self.response.headers['Content-Type'] = 'text/html'
 
     template = JINJA_ENVIRONMENT.get_template('templates/about.html')
-    content = template.render(_GetTemplateDict())
+    content = template.render(_GetTemplateDict(request))
     self.response.write(content)
 
 class Form(webapp2.RequestHandler):
@@ -51,7 +52,7 @@ class Contact(webapp2.RequestHandler):
     self.response.headers['Content-Type'] = 'text/html'
 
     template = JINJA_ENVIRONMENT.get_template('templates/form.html')
-    content = template.render(_GetTemplateDict())
+    content = template.render(_GetTemplateDict(request))
     self.response.write(content)
 
 
