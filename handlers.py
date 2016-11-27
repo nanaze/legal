@@ -43,6 +43,10 @@ class Resources(webapp2.RequestHandler):
     self.response.write(content)
 
 class Form(webapp2.RequestHandler):
+  def post(self):
+    formmail.SendFormEmail(self.request)
+    
+class Contact(webapp2.RequestHandler):
   def get(self):
     self.response.headers['Content-Type'] = 'text/html'
 
@@ -50,6 +54,4 @@ class Form(webapp2.RequestHandler):
     content = template.render(_GetTemplateDict())
     self.response.write(content)
 
-  def post(self):
-    formmail.SendFormEmail(self.request)
 
