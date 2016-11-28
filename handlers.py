@@ -6,8 +6,11 @@ import logging
 import formmail
 import collections
 
+TEMPLATES_PATH = os.path.join(
+  os.path.dirname(__file__), 'templates')
+
 JINJA_ENVIRONMENT = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    loader=jinja2.FileSystemLoader(TEMPLATES_PATH),
     extensions=['jinja2.ext.autoescape'],
     trim_blocks=True,
     autoescape=True)
@@ -31,7 +34,7 @@ class MainPage(webapp2.RequestHandler):
   def get(self):
     self.response.headers['Content-Type'] = 'text/html'
 
-    template = JINJA_ENVIRONMENT.get_template('templates/index.html')
+    template = JINJA_ENVIRONMENT.get_template('index.html')
     content = template.render(_GetTemplateDict(self.request))
     self.response.write(content)
 
@@ -39,7 +42,7 @@ class Resources(webapp2.RequestHandler):
   def get(self):
     self.response.headers['Content-Type'] = 'text/html'
 
-    template = JINJA_ENVIRONMENT.get_template('templates/about.html')
+    template = JINJA_ENVIRONMENT.get_template('about.html')
     content = template.render(_GetTemplateDict(self.request))
     self.response.write(content)
 
@@ -51,7 +54,7 @@ class Contact(webapp2.RequestHandler):
   def get(self):
     self.response.headers['Content-Type'] = 'text/html'
 
-    template = JINJA_ENVIRONMENT.get_template('templates/form.html')
+    template = JINJA_ENVIRONMENT.get_template('form.html')
     content = template.render(_GetTemplateDict(self.request))
     self.response.write(content)
 
