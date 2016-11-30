@@ -75,6 +75,10 @@ img#logo {
     font-size: 220%;
 }
 
+.formitems {
+  list-style: none;
+}
+
 article {
   color: #292f36;
 }

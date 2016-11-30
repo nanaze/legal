@@ -12,23 +12,22 @@ _REQUEST_KEYS = [
   ]
 
 def SendFormEmail(request):
-  
-    dispatch_email = config.ReadConfig('dispatch.email')
+  dispatch_email = config.ReadConfig('dispatch.email')
 
-    if not dispatch_email:
-      logging.info('Dispatch email config not found. Would have sent email here')
-      return None
+  if not dispatch_email:
+    logging.info('Dispatch email config not found. Would have sent email here')
+    return None
 
-    logging.info('Sending email to ', dispatch_email)
+  logging.info('Sending email to ', dispatch_email)
 
-    subject = GenerateSubject(request)
-    body = GenerateEmail(request)
+  subject = GenerateSubject(request)
+  body = GenerateEmail(request)
 
-    mail.send_mail(
-        sender=dispatch_email,
-        to=dispatch_email,
-        subject=subject,
-        body=body)
+  mail.send_mail(
+      sender=dispatch_email,
+      to=dispatch_email,
+      subject=subject,
+      body=body)
 
 
 def GenerateSubject(request):
