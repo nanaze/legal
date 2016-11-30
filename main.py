@@ -15,4 +15,5 @@ app = webapp2.WSGIApplication([
   ('/resources', handlers.Resources),
   ('/contact', handlers.Contact),
   ('/form', handlers.Form),
+  ('/thanks', handlers.Thanks)
 ], debug=is_debug)
