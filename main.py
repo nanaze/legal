@@ -1,7 +1,7 @@
-import os
-import jinja2
 import handlers
+import jinja2
 import logging
+import os
 import webapp2
 
 logging.basicConfig(level=logging.INFO)

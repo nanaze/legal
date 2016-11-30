@@ -1,6 +1,7 @@
 import cloudstorage
+import logging
 import os
-import logging 
+
 from google.appengine.api import app_identity
 
 def _GetBucketPath():

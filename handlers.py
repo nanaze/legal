@@ -1,10 +1,10 @@
-import os
-import jinja2
-import config
-import webapp2
-import logging
-import formmail
 import collections
+import config
+import formmail
+import jinja2
+import logging
+import os
+import webapp2
 
 TEMPLATES_PATH = os.path.join(
   os.path.dirname(__file__), 'templates')
@@ -49,7 +49,7 @@ class Resources(webapp2.RequestHandler):
 class Form(webapp2.RequestHandler):
   def post(self):
     formmail.SendFormEmail(self.request)
-    
+
 class Contact(webapp2.RequestHandler):
   def get(self):
     self.response.headers['Content-Type'] = 'text/html'
@@ -57,5 +57,3 @@ class Contact(webapp2.RequestHandler):
     template = JINJA_ENVIRONMENT.get_template('form.html')
     content = template.render(_GetTemplateDict(self.request))
     self.response.write(content)
-
-
