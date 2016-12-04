@@ -3,5 +3,8 @@
 *~
 \#*\#
 
+#intellij files
+.idea
+
 # python files
 *.pyc
