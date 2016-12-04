@@ -24,10 +24,18 @@ def _GetNavigationEntries():
     NavigationEntry('/contact', 'Contact us.')
   ]
 
-def _GetTemplateDict(request):
+def _GetTemplateDict(request, additional_stylesheets=None):
+  default_stylesheets = ['style.css', 'grid.css']
+  stylesheets = list(default_stylesheets)
+
+  if additional_stylesheets:
+    for sheet in additional_stylesheets:
+      stylesheets.append(sheet)
+
   return {
     'navigation': _GetNavigationEntries(),
-    'request': request
+    'request': request,
+    'stylesheets': stylesheets
   }
 
 class MainPage(webapp2.RequestHandler):
@@ -64,5 +72,6 @@ class Contact(webapp2.RequestHandler):
     self.response.headers['Content-Type'] = 'text/html'
 
     template = JINJA_ENVIRONMENT.get_template('form.html')
-    content = template.render(_GetTemplateDict(self.request))
+    template_dict = _GetTemplateDict(self.request, additional_stylesheets=['form.css'])
+    content = template.render(template_dict)
     self.response.write(content)
