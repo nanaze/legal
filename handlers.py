@@ -24,7 +24,7 @@ def _GetNavigationEntries():
     NavigationEntry('/contact', 'Contact us.')
   ]
 
-def _GetTemplateDict(request, additional_stylesheets=None):
+def GetTemplateDict(request, additional_stylesheets=None):
   default_stylesheets = ['style.css', 'grid.css']
   stylesheets = list(default_stylesheets)
 
@@ -43,7 +43,7 @@ class MainPage(webapp2.RequestHandler):
     self.response.headers['Content-Type'] = 'text/html'
 
     template = JINJA_ENVIRONMENT.get_template('index.html')
-    content = template.render(_GetTemplateDict(self.request))
+    content = template.render(GetTemplateDict(self.request))
     self.response.write(content)
 
 class Resources(webapp2.RequestHandler):
@@ -51,7 +51,7 @@ class Resources(webapp2.RequestHandler):
     self.response.headers['Content-Type'] = 'text/html'
 
     template = JINJA_ENVIRONMENT.get_template('about.html')
-    content = template.render(_GetTemplateDict(self.request))
+    content = template.render(GetTemplateDict(self.request))
     self.response.write(content)
 
 class Form(webapp2.RequestHandler):
@@ -64,14 +64,5 @@ class Thanks(webapp2.RequestHandler):
     self.response.headers['Content-Type'] = 'text/html'
 
     template = JINJA_ENVIRONMENT.get_template('thanks.html')
-    content = template.render(_GetTemplateDict(self.request))
-    self.response.write(content)
-    
-class Contact(webapp2.RequestHandler):
-  def get(self):
-    self.response.headers['Content-Type'] = 'text/html'
-
-    template = JINJA_ENVIRONMENT.get_template('form.html')
-    template_dict = _GetTemplateDict(self.request, additional_stylesheets=['form.css'])
-    content = template.render(template_dict)
+    content = template.render(GetTemplateDict(self.request))
     self.response.write(content)

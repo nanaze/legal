@@ -3,6 +3,7 @@ import jinja2
 import logging
 import os
 import webapp2
+import contact
 
 logging.basicConfig(level=logging.INFO)
 
@@ -13,7 +14,7 @@ is_debug = 'Develop' in server
 app = webapp2.WSGIApplication([
   ('/', handlers.MainPage),
   ('/resources', handlers.Resources),
-  ('/contact', handlers.Contact),
+  ('/contact', contact.Contact),
   ('/form', handlers.Form),
   ('/thanks', handlers.Thanks)
 ], debug=is_debug)
