@@ -15,8 +15,15 @@ class Contact(webapp2.RequestHandler):
   def get(self):
     self.response.headers['Content-Type'] = 'text/html'
 
-    template = handlers.JINJA_ENVIRONMENT.get_template('form.html')
-    template_dict = handlers.GetTemplateDict(self.request, additional_stylesheets=['form.css'])
+    additional_stylesheets = [
+      'form.css',
+      'columns.css'
+    ]
+    
+    template = handlers.JINJA_ENVIRONMENT.get_template('contact.html')
+    template_dict = handlers.GetTemplateDict(
+      self.request,
+      additional_stylesheets=additional_stylesheets)
 
     template_dict['states'] = [''] + STATE_CODES
     

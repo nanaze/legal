@@ -25,7 +25,7 @@ def _GetNavigationEntries():
   ]
 
 def GetTemplateDict(request, additional_stylesheets=None):
-  default_stylesheets = ['style.css', 'grid.css']
+  default_stylesheets = ['style.css']
   stylesheets = list(default_stylesheets)
 
   if additional_stylesheets:

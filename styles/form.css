@@ -3,26 +3,15 @@
 * Form Styling
 */
 
-.form-label {
+.contact-us-form label {
   display: block;
-  font-size: 16px;
-  margin-bottom: 4px;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 3px;  
 }
 
-.form-sub-label {
-  display: block;
-  font-size: 12px;
-  margin-top: 4px;
-}
-
-.form-rows {
-  padding: 0;
-  margin: 0;
-}
-
-.form-rows li {
-  list-style-type: none;
-  margin-bottom: 10px;
+.contact-us-form input[type=text] {
+    display: block;
 }
 
 .contact-us-form input[type=text], .contact-us-form textarea {
@@ -30,8 +19,7 @@
   border: 1px solid #e4e4e4;
   border-radius: 4px;
   font-size: 16px;
-  line-height: 40px;
-  padding: 0 8px;
+  padding: 8px 8px;
   width: 100%;
 }
 
@@ -49,19 +37,14 @@
   margin: 0 0 5px;
 }
 
-.form-actions {
-  float: right;
-}
-
-.btn.blue {
-  border: none;
+.contact-us-form input[type=submit] {
   border-radius: 4px;
-  background-color: #054a91;
-  color: white;
-  float: left;
+  background-color: #fafafa;
+  color: black;
   font-size: 14px;
   font-weight: 400;
   margin: 0;
-  padding: .8em 1em;
+  border: 1px solid #e4e4e4;
+  padding: 1em 2em;
 }
 

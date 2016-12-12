@@ -1,78 +1,43 @@
-{% extends "contact_us_layout.html" %}
-
-{% block main_content %}
 <form method="POST" class="contact-us-form" action="/form">
-  <ul class="form-rows row">
-    <li class="col-md-12">
-      <label class="form-label">Name</label>
-      <div class="row">
-        <div class="col-md-6">
-          <input type="text" name="first_name"/>
-          <label class="form-sub-label" for="first_name">First Name</label>
-        </div>
-        <div class="col-md-6">
-          <input type="text" name="last_name"/>
-          <label class="form-sub-label" for="last_name">Last Name</label>
-        </div>
-      </div>
-    </li>
-    <li class="col-md-12">
-      <label class="form-label">Contact Information</label>
-      <div class="row">
-        <div class="col-md-6">
-          <input type="text" name="email"/>
-          <label class="form-sub-label" for="email">Email</label>
-        </div>
-        <div class="col-md-6">
-          <input type="text" name="phone_number"/>
-          <label class="form-sub-label" for="phone_number">Phone Number</label>
-        </div>
-      </div>
-    </li>
-    <li class="col-md-12">
-      <div class="row">
-        <div class="col-md-12">
-          <label class="form-label" for="contact_method">Preferred Contact Method</label>
-          <label><input type="radio" name="contact_method" value="phone"> By Phone</label>
-          <label><input type="radio" name="contact_method" value="email"> By Email</label>
-        </div>
-      </div>
-    </li>
-    <li class="col-md-12">
-      <label class="form-label">Location</label>
-      <div class="row">
-        <div class="col-md-6">
-          <input type="text" name="city"/>
-          <label class="form-sub-label" for="city">City</label>
-        </div>
-        <div class="col-md-6">
-          <select name="state">
+<h2>Name</h2>
+<label class="form-sub-label" for="first_name">First Name</label>
+<input type="text" name="first_name"/>
+<label class="form-sub-label" for="last_name">Last Name</label>    
+<input type="text" name="last_name"/>
+
+<h2>Contact Information</h2>
+<label class="form-sub-label" for="email">Email address</label>
+<input type="text" name="email"/>
+
+<label class="form-sub-label" for="phone_number">Phone number</label>
+<input type="text" name="phone_number"/>
+
+<label class="form-sub-label" for="contact_method">Preferred Contact Method</label>
+<label><input type="radio" name="contact_method" value="phone"> By Phone</label>
+<label><input type="radio" name="contact_method" value="email"> By Email</label>
+
+<h2>Location</h2>
+
+<label class="form-sub-label" for="city">City</label>
+<input type="text" name="city"/>
+
+<label class="form-sub-label" for="state">State</label>
+<select name="state">
 {% include 'state_options.html' %}
-          </select>
-          <label class="form-sub-label" for="state">State</label>
-        </div>
-      </div>
-    </li>
-    <li class="col-md-12">
-      <div class="row">
-        <div class="col-md-12">
-          <label class="form-label" for="areas_of_need">Areas of Need</label>
-          <label class="radio-option"><input type="checkbox" name="areas_of_need" value="area_1"> Area 1</label>
-          <label class="radio-option"><input type="checkbox" name="areas_of_need" value="area_2"> Area 2</label>
-          <label class="radio-option"><input type="checkbox" name="areas_of_need" value="area_3"> Area 3</label>
-        </div>
-      </div>
-    </li>
-    <li class="col-md-12">
-      <label class="form-label" for="description">Additional Information</label>
-      <textarea name="description" rows="4" cols="50"
-                placeholder="Don't tell us your whole story - just a brief note about how to contact you."></textarea>
-    </li>
-    <li class="col-md-12">
-      <div class="form-actions">
-        <input class="btn blue" type="submit"/>
-      </div>
-    </li>
-  </ul>
+</select>
+
+<h2>Areas of need</h2>
+
+<label class="radio-option"><input type="checkbox" name="areas_of_need" value="area_1"> Area 1</label>
+<label class="radio-option"><input type="checkbox" name="areas_of_need" value="area_2"> Area 2</label>
+<label class="radio-option"><input type="checkbox" name="areas_of_need" value="area_3"> Area 3</label>
+
+<h2>Additional Information</h2>
+<p>
+<textarea name="description" rows="6" cols="50"
+          placeholder="Please give a brief description of your concerns or anything else we ought to know."></textarea>
+
+<p>
+<input type="submit"/>
+
 </form>
-{% endblock %}

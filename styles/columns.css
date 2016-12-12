@@ -1,0 +1,9 @@
+.left-column {
+    width: 300px;
+    position: absolute;    
+}
+
+.right-column {
+    margin-left: 300px;
+    position: absolute;
+}
