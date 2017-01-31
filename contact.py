@@ -2,20 +2,18 @@ import csv
 import handlers
 import webapp2
 
-def _GetStateCodes():
-  with open('data/states.txt') as f:
+def _LoadDataFile(file_location):
+  with open(file_location) as f:
     for line in f:
       line = line.strip()
       if line:
         yield line
+
+def _GetStateCodes():
+  return _LoadDataFile('data/states.txt')
 
 def _GetAreasOfNeed():
-  with open('data/areas_of_need.txt') as f:
-    for line in f:
-      line = line.strip()
-      if line:
-        yield line
-
+  return _LoadDataFile('data/areas_of_need.txt')
 
 STATE_CODES = sorted(list(_GetStateCodes()))
 
