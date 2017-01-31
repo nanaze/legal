@@ -2,7 +2,7 @@
 <h2>Name</h2>
 <label class="form-sub-label" for="first_name">First Name</label>
 <input type="text" name="first_name"/>
-<label class="form-sub-label" for="last_name">Last Name</label>    
+<label class="form-sub-label" for="last_name">Last Name</label>
 <input type="text" name="last_name"/>
 
 <h2>Contact Information</h2>
@@ -28,9 +28,7 @@
 
 <h2>Areas of need</h2>
 
-<label class="radio-option"><input type="checkbox" name="areas_of_need" value="area_1"> Area 1</label>
-<label class="radio-option"><input type="checkbox" name="areas_of_need" value="area_2"> Area 2</label>
-<label class="radio-option"><input type="checkbox" name="areas_of_need" value="area_3"> Area 3</label>
+{% include 'areas_of_need.html' %}
 
 <h2>Additional Information</h2>
 <p>
