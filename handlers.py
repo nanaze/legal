@@ -43,7 +43,8 @@ class MainPage(webapp2.RequestHandler):
     self.response.headers['Content-Type'] = 'text/html'
 
     template = JINJA_ENVIRONMENT.get_template('index.html')
-    content = template.render(GetTemplateDict(self.request))
+    content = template.render(
+      GetTemplateDict(self.request, additional_stylesheets=['index.css']))
     self.response.write(content)
 
 class Resources(webapp2.RequestHandler):
